@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesa Pronta | Locação de utensílios para festas e eventos</title>
+<meta name="description" content="Pratos, taças, boleiras e equipamentos para sua festa. Retire, use e devolva sem lavar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F2; --paper:#FFFFFF; --ink:#2E2E2E; --muted:#6B6762;
+  --bronze:#A67C52; --gold:#C9A86A; --line:#E6DDCF; --sand:#F1EADF;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:400 1.05rem/1.65 var(--sans);color:var(--ink);background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1}
+h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:.6rem}
+h3{font-size:1.35rem}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
+section{padding:5rem 0}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:2.2rem}
+.btn{display:inline-block;border:0;cursor:pointer;font:500 1rem var(--sans);padding:.8rem 1.6rem;background:var(--ink);color:#fff;text-decoration:none;border-radius:2px;transition:background .2s}
+.btn:hover{background:var(--bronze)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+.btn.wa{background:#1F7A4D;width:100%;margin-top:.8rem}
+.btn.wa:hover{background:#17623D}
+
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+.logo{font:700 1.7rem var(--serif);text-decoration:none;color:var(--ink)}
+.logo span{color:var(--bronze)}
+nav{display:flex;gap:1.4rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+#openCart{position:relative}
+#cartCount{background:var(--gold);color:var(--ink);border-radius:99px;padding:0 .5rem;margin-left:.4rem;font-size:.85rem}
+@media(max-width:860px){nav{display:none}}
+
+/* Hero: a frase é o elemento principal */
+.hero{padding:6rem 0 5rem;background:linear-gradient(180deg,var(--sand),var(--bg))}
+.hero h1{font-size:clamp(3rem,8.5vw,6.4rem);letter-spacing:-.01em;max-width:13ch}
+.hero p{max-width:48ch;margin:1.4rem 0 2rem;color:var(--muted);font-size:1.15rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .rule{width:90px;height:3px;background:var(--gold);margin:1.6rem 0 0}
+
+/* Grades */
+.grid{display:grid;gap:1.5rem}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.cat-link{display:block;text-decoration:none;padding:1.6rem;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold)}
+.cat-link:hover{border-left-color:var(--bronze)}
+.cat-link p{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.perks div{padding-top:1rem;border-top:2px solid var(--gold)}
+.perks p{color:var(--muted);margin-top:.3rem}
+.about{background:var(--sand)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:800px){.about .wrap{grid-template-columns:1fr}}
+.about blockquote{font:italic 600 1.7rem/1.3 var(--serif);border-left:3px solid var(--bronze);padding-left:1.4rem}
+
+/* Catálogo */
+.cat-block{margin-top:3.2rem}
+.cat-block>h3{font-size:1.9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line);margin-bottom:1.4rem}
+.card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column}
+.ph{aspect-ratio:4/3;background:linear-gradient(135deg,var(--sand),#E3D6BE);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card .desc{color:var(--muted);font-size:.93rem;flex:1}
+.price{font:600 1.35rem var(--serif);color:var(--bronze)}
+.price small{font:400 .85rem var(--sans);color:var(--muted)}
+.card .btn{padding:.6rem 1rem;margin-top:.4rem}
+
+/* Calculadora */
+.calc{background:var(--ink);color:#fff}
+.calc .lead{color:#CFCAC2}
+.calc form{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end}
+label{display:flex;flex-direction:column;gap:.3rem;font-size:.9rem}
+input,select{font:inherit;padding:.7rem .8rem;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:2px;min-width:0}
+#calcOut{margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+#calcOut div{border-top:2px solid var(--gold);padding-top:.7rem}
+#calcOut strong{display:block;font:600 2.6rem var(--serif);color:var(--gold)}
+#calcNote{margin-top:1rem;color:#CFCAC2;font-size:.9rem}
+
+/* Galeria */
+.gallery figure{position:relative}
+.gallery figcaption{padding:.7rem 0;font:600 1.2rem var(--serif)}
+.gallery .ph{aspect-ratio:3/4}
+
+/* Depoimentos */
+.quote{background:var(--paper);padding:1.6rem;border:1px solid var(--line)}
+.quote p{font:italic 500 1.2rem/1.45 var(--serif)}
+.quote cite{display:block;margin-top:1rem;font-style:normal;color:var(--muted);font-size:.9rem}
+.stars{color:var(--gold);letter-spacing:2px}
+
+/* FAQ */
+.faq{max-width:780px}
+details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+summary{cursor:pointer;font:600 1.3rem var(--serif);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--bronze);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:'–'}
+details p{color:var(--muted);margin-top:.6rem}
+
+footer{background:var(--ink);color:#CFCAC2;padding:2.5rem 0;text-align:center;font-size:.95rem}
+
+/* Carrinho */
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:30}
+#overlay.on{opacity:1;pointer-events:auto}
+#cart{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:var(--bg);z-index:31;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column}
+#cart.on{transform:none}
+#cart header{position:static;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center}
+#cart h2{font-size:1.6rem;margin:0}
+.x{background:none;border:0;font-size:1.8rem;cursor:pointer;line-height:1}
+#cartItems{flex:1;overflow:auto;padding:0 1.25rem}
+.line{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.line .nm{font-weight:500}
+.line .sub{color:var(--muted);font-size:.9rem}
+.qty{display:flex;align-items:center;gap:.4rem}
+.qty button{width:30px;height:30px;border:1px solid var(--ink);background:none;cursor:pointer;font-size:1.1rem}
+.qty button:hover{background:var(--ink);color:#fff}
+.rm{background:none;border:0;color:var(--bronze);cursor:pointer;font-size:.85rem;text-decoration:underline;text-align:right}
+#cartFoot{padding:1rem 1.25rem 1.4rem;border-top:1px solid var(--line);background:var(--paper)}
+#cartFoot .tot{display:flex;justify-content:space-between;font:600 1.5rem var(--serif);margin-bottom:.8rem}
+#cartFoot form{display:grid;gap:.6rem}
+#msg{color:#A33;font-size:.9rem;min-height:1.2em;margin-top:.4rem}
+.empty{color:var(--muted);padding:2rem 0}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Mesa <span>Pronta</span></a>
+    <nav>
+      <a href="#quem-somos">Quem somos</a><a href="#catalogo">Catálogo</a>
+      <a href="#calculadora">Calculadora</a><a href="#inspire-se">Inspire-se</a><a href="#faq">Dúvidas</a>
+    </nav>
+    <button class="btn" id="openCart" aria-label="Abrir carrinho">Carrinho<span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <h1>A elegância que sua festa merece</h1>
+    <div class="rule"></div>
+    <p>Louças, taças, expositores e equipamentos para receber bem. Você monta o pedido em minutos, retira tudo pronto e devolve sem lavar.</p>
+    <div class="cta"><a class="btn" href="#catalogo">Ver catálogo</a><a class="btn alt" href="#calculadora">Quanto preciso alugar?</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>O que você pode alugar</h2>
+    <p class="lead">Quatro linhas de peças para jantares, coquetéis, casamentos e festas infantis.</p>
+    <div class="grid g4" id="catLinks"></div>
+    <div class="grid g3 perks" style="margin-top:3.5rem">
+      <div><h3>Devolva sem lavar</h3><p>Nós cuidamos da higienização depois do evento.</p></div>
+      <div><h3>Pedido em minutos</h3><p>Escolha as peças e receba o orçamento pelo WhatsApp.</p></div>
+      <div><h3>Peças de qualidade</h3><p>Porcelana, cristal e inox conferidos a cada locação.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="quem-somos">
+  <div class="wrap">
+    <div>
+      <h2>Quem somos</h2>
+      <p>A Mesa Pronta nasceu para que receber bem não exija comprar louça para usar uma vez. Alugamos peças bonitas, em bom estado e na quantidade certa, para que o anfitrião cuide dos convidados e não da cozinha.</p>
+      <p style="margin-top:1rem">Cada pedido é conferido na entrega e na devolução, com atendimento direto e transparente.</p>
+    </div>
+    <blockquote>Sofisticação prática: a mesa posta, sem a louça para lavar.</blockquote>
+  </div>
+</section>
+
+<section id="catalogo">
+  <div class="wrap">
+    <h2>Catálogo</h2>
+    <p class="lead">Os preços são por diária de locação. O valor final é confirmado no atendimento.</p>
+    <div id="catalog"><p class="empty">Carregando peças…</p></div>
+  </div>
+</section>
+
+<section class="calc" id="calculadora">
+  <div class="wrap">
+    <h2>Quanto preciso alugar?</h2>
+    <p class="lead">Informe o número de convidados e o tipo de evento. Sugerimos quantidades com uma margem de 10% para reposição.</p>
+    <form id="calcForm">
+      <label>Convidados<input type="number" id="guests" min="1" max="2000" value="50" required></label>
+      <label>Tipo de evento
+        <select id="evType">
+          <option value="jantar">Jantar</option><option value="coquetel">Coquetel</option><option value="infantil">Festa infantil</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Calcular</button>
+    </form>
+    <div id="calcOut" aria-live="polite"></div>
+    <p id="calcNote"></p>
+  </div>
+</section>
+
+<section id="inspire-se">
+  <div class="wrap">
+    <h2>Inspire-se</h2>
+    <p class="lead">Combinações de mesa posta para guiar a escolha das peças.</p>
+    <div class="grid g3 gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section style="background:var(--sand)">
+  <div class="wrap">
+    <h2>Quem já alugou</h2>
+    <div class="grid g3" id="testimonials" style="margin-top:2rem"></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Como é cobrado o frete?</summary><p>O frete é calculado à parte, de acordo com o endereço do evento. Você também pode retirar as peças em nossa loja sem custo de entrega.</p></details>
+    <details><summary>E se alguma peça quebrar?</summary><p>Peças quebradas, trincadas ou perdidas têm taxa de avaria, cobrada pelo valor de reposição informado no orçamento. Pequenos desgastes de uso normal não são cobrados.</p></details>
+    <details><summary>Por quanto tempo posso ficar com as peças?</summary><p>O período padrão de locação é de 24 a 48 horas. Para períodos maiores, consulte-nos pelo WhatsApp.</p></details>
+    <details><summary>Preciso lavar tudo antes de devolver?</summary><p>Não. Basta retirar o excesso de comida e devolver as peças. A lavagem e a higienização são feitas por nós.</p></details>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Mesa Pronta · Atendimento pelo WhatsApp</div></footer>
+
+<div id="overlay"></div>
+<aside id="cart" aria-label="Carrinho">
+  <header><h2>Seu pedido</h2><button class="x" id="closeCart" aria-label="Fechar">×</button></header>
+  <div id="cartItems"></div>
+  <div id="cartFoot">
+    <div class="tot"><span>Total estimado</span><span id="cartTotal">R$ 0,00</span></div>
+    <form id="orderForm" novalidate>
+      <input id="cName" placeholder="Seu nome" autocomplete="name" required>
+      <input id="cPhone" type="tel" placeholder="Telefone com DDD" autocomplete="tel" required>
+      <label>Data do evento<input id="cDate" type="date" required></label>
+      <button class="btn wa" type="submit">Finalizar pedido via WhatsApp</button>
+      <div id="msg" role="alert"></div>
+    </form>
+  </div>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
