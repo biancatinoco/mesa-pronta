@@ -1,6 +1,6 @@
 // =====================================================================
 // Mesa Pronta - servidor Express + PostgreSQL
-// Rodar: npm install && npm start   (abre em http://localhost:3000)
+// Rodar: npm install && npm start   https://mesa-pronta.onrender.com
 // Variável opcional: DATABASE_URL=postgresql://usuario:senha@localhost:5432/mesa_pronta
 // =====================================================================
 const express = require('express');
