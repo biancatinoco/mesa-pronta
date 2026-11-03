@@ -3,7 +3,7 @@
 // =====================================================================
 
 // >>> CONFIGURE AQUI: número da loja com código do país + DDD, só dígitos <<<
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511947224613';
 
 const $ = (s) => document.querySelector(s);
 const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
